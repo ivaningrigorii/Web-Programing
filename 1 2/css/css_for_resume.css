@@ -1,0 +1,30 @@
+body {
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #10303e;
+    font-family: monospace;
+}
+/*тег для всех ссылок*/
+a {
+    color: #6b67d1;
+    text-decoration: underline #eb0e52 dashed;
+}
+/*псевдокласс после посещения*/
+a:visited {
+    color: #9d9d9d;
+    text-decoration: underline #eb0e52 dashed;
+}
+/*псевдокласс при нажатии*/
+a:active {
+    color: #72d4ab;
+    text-decoration: underline #eb0e52 dashed;
+}
+/*псевдокласс при наведении*/
+a:hover {
+    color: #e073e0;
+    text-decoration: underline #d39725;
+}
+/*универсальный класс*/
+.u_special {
+    text-decoration: underline dashed;
+}

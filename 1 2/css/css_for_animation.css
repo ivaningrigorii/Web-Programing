@@ -1,0 +1,17 @@
+.my_first_animation {
+    animation: color_dance 2s linear infinite;
+}
+
+@keyframes color_dance{
+    0% {
+        color: #f0d04a;
+    }
+    
+    50% {
+        color: #ea5338;
+    }
+    
+    100% {
+        color: #597ad6;
+    }
+}
