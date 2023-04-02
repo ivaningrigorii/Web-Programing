@@ -1,0 +1,48 @@
+body {
+    background: #fae8bf;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#table {
+    width: 350px;
+    height: 450px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 25px;
+}
+
+.fio {
+    width: 230px;
+    font-weight: bold;
+}
+
+fieldset {
+    width: 230px;
+}
+
+#mw {
+    width: 170px;
+}
+
+
+img {
+    width: 300px;
+}
+
+button {
+    height: 30px;
+    width: 230px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.red_submit {
+    background: #ebbaba;
+    color: #070606;
+}
+
+.blue_submit {
+    background: #92cceb;
+    color: #070606;
+}

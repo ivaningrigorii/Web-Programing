@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <title>Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="js.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <a href="../index.html">Вернуться<a></a>
+        <h1 align="center">Регистрация заявления</h1>
+        <div id="table" align="center">
+            <form action="visual.php" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Ваш пол:</legend>
+                    <div>
+                      <input type="radio" id="m" name="mw" value="мужской" checked>
+                      <label for="m">Мужской</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="w" name="mw" value="женский">
+                      <label for="w">Женский</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Увлечения:</legend>
+                    <div>
+                      <input type="checkbox" id="sport" name="interest[]" value="спорт" checked>
+                      <label for="sport">Спорт</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" id="music" name="interest[]" value="музыка">
+                      <label for="music">Музыка</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="other" name="interest[]" value="другое">
+                        <label for="other">Другое</label>
+                      </div>
+                </fieldset>
+                
+                <label id="form_label">Логин: </label>
+                <input type="text" name="login" placeholder="ivanin123" id="login"><br>
+                
+                <label id="form_label">Пароль: </label>
+                <input type="password" name="password" placeholder="123" id="password"><br><br>
+
+                <textarea name="comment">Кратко о себе</textarea><br>
+
+                <select name="city">
+                    <option value="Воронежская область">Воронежская область</option>
+                    <option value="Липецкая область">Липецкая область</option>
+                </select><br>
+
+                <p>Текстовое резюме: <input type="file" name="rezume" multiple accept=".txt"><br><br>
+
+                <button class="red_submit" type="submit" name="submit">Зарегистрироваться</button>
+                <button class="blue_submit" type="reset">Сбросить всё</button>
+            </form>
+        </div><br><br>
+        <br>
+    </body>
+</html>
