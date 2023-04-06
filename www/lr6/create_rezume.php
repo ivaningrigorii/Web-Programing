@@ -1,5 +1,10 @@
 <?php
-
+    @ob_start();
+    session_start();
+?>
+ <a href="../index.html">Вернуться в самое начало<a></a>
+<?php
+    
     $conn = new mysqli("localhost", "root", "", "vstu_work_db");
     if($conn->connect_error){
         die("Ошибка: " . $conn->connect_error);
@@ -9,12 +14,11 @@
 
     if ($conn->query("SELECT * from user WHERE user.login = '$login'") != null){
         $conn->query("DELETE FROM user WHERE user.login='$login'");
-        echo '<p>Всё ок</p>';
     }
 
     $password = $conn->real_escape_string($_POST["password"]);
     $comment = $conn->real_escape_string($_POST["comment"]);
-    $rezume = $conn->real_escape_string($_POST["filename"]);
+    $rezume = $conn->real_escape_string($_POST["filename_"]);
 
     $city_text = $conn->real_escape_string($_POST["city"]);
     $mw_text = $conn->real_escape_string($_POST["mw"]);
@@ -30,7 +34,7 @@
     }
 
     $sql = "INSERT INTO user (login, password, comment, rezume, fk_city, fk_mw) 
-     VALUES ('$login', '$password', '$comment', '$filename', '$city', '$mw')";
+     VALUES ('$login', '$password', '$comment', '$rezume', '$city', '$mw')";
 
     if($conn->query($sql)){
         echo "Данные успешно добавлены";
@@ -38,19 +42,18 @@
         echo "Ошибка: " . $conn->error;
     }
 
-    
-    $interests[] = $_POST["interest"];
-    echo $_POST["interest"];
+    echo '<br/><br/>';
+
+    $interests = json_decode($_SESSION['interest']);
+
     $id_user_ = $conn->query("SELECT id_user from user WHERE user.login='$login' LIMIT 1");
     while ($row = $id_user_->fetch_assoc()) {
         $id_user = $row['id_user'];
     }
-    echo '<p>дошли</p>';
 
 
     for($i = 0; $i < count($interests); $i++) {
         $int = $interests[$i];
-        echo $int;
         $interest = $conn->query("SELECT * FROM interest WHERE name='$int'");
         while ($row = $interest->fetch_assoc()) {
             $int_ = $row['id_interest'];
